@@ -36,6 +36,18 @@ app.get('/contact', (req, res) => {
   });
 });
 
+app.get('/compose', (req, res) => {
+  res.render('compose.ejs');
+});
+
+app.post('/compose', (req, res) => {
+  const post = {
+    title: req.body.articleTitle,
+    text: req.body.articleText
+  };
+  // console.log(post.text + ' ' + post.title);
+});
+
 app.listen(port, function () {
   console.log("Server started on port 3000");
 });
