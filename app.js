@@ -43,6 +43,10 @@ app.get('/compose', (req, res) => {
   res.render('compose.ejs');
 });
 
+app.get('/posts/:topic', (req, res) => {
+  console.log(req.params.topic);
+});
+
 app.post('/compose', (req, res) => {
   const post = {
     title: req.body.articleTitle,
