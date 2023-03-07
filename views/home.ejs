@@ -5,7 +5,9 @@
 
     <% posts.forEach(post => { %>
         <h1><%= post.title  %></h1>
-        <p><%= post.text %></p>
+        <p><%= post.text.slice(0, 100) + "..." %>
+        <a href="/posts/<%= post.title %>">Read more</a>
+        </p>
     <% }); %>
 
 <%- include('partials/footer') -%>
