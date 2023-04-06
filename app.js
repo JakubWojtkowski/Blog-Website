@@ -63,7 +63,9 @@ app.get('/posts/:postId', (req, res) => {
   const requestedPostId = req.params.postId;
   // const postId = req.body.postId;
 
-  Post.findOne({_id: requestedPostId}, (err, foundPost) => {
+  Post.findOne({
+    _id: requestedPostId
+  }, (err, foundPost) => {
     if (!err) {
       res.render("post.ejs", {
         postTitle: foundPost.title,
